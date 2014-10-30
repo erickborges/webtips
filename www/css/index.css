@@ -1,0 +1,257 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+html {
+    font-size: 14px;
+}
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;
+    font-family:'Roboto', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+/** DEFAULT CHUI.CSS INI **/
+#global-nav {
+    display: none;
+}
+nav {
+    position: fixed;
+    height: 5rem;
+    
+    
+    color: #FFF;
+    background-color: #000;
+    border-bottom: 0.1rem solid #000; /* util para troca de tema, heinnnn mmmm */
+}
+nav h1 {
+    font-size: 2rem !important;
+}
+nav h1,
+nav button {
+    
+    
+    color: #FFF;
+}
+article {
+    position: fixed;
+    top: 5.1rem;
+}
+article section * {
+    font-size: 30px;
+    line-height: 1;
+}
+
+.section-inner {
+    padding: 0 3%;
+}
+
+.menu-slide {
+    display: block;
+    vertical-align: top;
+    text-align: center;
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    width: 3%;
+    z-index: 8888;
+    color: #FFF;
+    background: none transparent;
+}
+.menu-lateral {
+    position: fixed;
+    z-index: 9999;
+    top: 50px;
+    bottom: 0;
+    left: -100%;
+    width: 60%;
+    background-color: red;
+    
+    -webkit-transition: all 200ms;
+}
+.menu-lateral.slided {
+    left: 0;
+}
+/** DEFAULT CHUI.CSS FIM **/
+
+/* Portrait layout (default) */
+body {
+    
+}
+
+/** MAIN PAGE INI **/
+#navMain {
+    /*display: none;*/
+}
+#main {
+    top: 0;
+    background-color: #FFF;
+    text-align: center;
+}
+#main h2 {
+    width: 100%;
+    margin: 3rem 0; 
+    text-align: center;
+    padding: 0;
+    font-size: 2.4rem;
+    font-weight: 200;
+    
+    
+    color: #5f9b51;
+}
+#mainPageList {
+    width: 70%;
+    margin: 1rem auto;
+}
+#mainPageList li {
+    display: block;
+    border: 0;
+    padding: 0;
+    margin: 2.4rem 0 0;
+    background: none transparent;
+}
+#mainPageList li:first-child {
+    margin: 0;
+}
+#mainPageList li h3 {
+    padding: 1.5rem 0;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    
+    
+    background: none #5f9b51;
+    color: #FFF;
+}
+#mainPageList li:after,
+#mainPageList li:after {
+    display: none;
+}
+#main a.marca {
+    display: inline-block;
+    width: auto;
+    margin: 3rem 0;
+    padding: 0;    
+    
+    
+    color: #5f9b51;
+}
+#main a.marca img {
+    width: 70%;
+}
+/** MAIN PAGE FIM **/
+
+/** NAV INI **/
+body .align-flush {
+    position: static;
+    height: 100%;
+    margin: 0 6rem 0 0;
+}
+body .align-flush.segmented.paging.horizontal .button[title*="panel"] {
+    display: inline-block;
+    top: 0;
+    line-height: 5rem;
+    height: 5rem !important;
+    width: 5rem !important;
+    padding: 0;
+}
+body .align-flush.segmented.paging .button[title*="panel"]::before {
+    width: 40% !important;
+    height: 40% !important;
+    position: static;
+    display: inline-block;
+    line-height: 5rem;
+    transform-origin: 50% 50%;
+    margin: 30% 0 !important;
+    box-sizing: border-box;
+    
+    border-color: #FFF !important;
+}
+body .align-flush.segmented.paging .button[title*="previous"]::before {
+    border-width: 0.3rem 0 0 0.3rem !important;
+}
+body .align-flush.segmented.paging .button[title*="next"]::before {
+    border-width: 0 0.3rem 0.3rem 0 !important;
+}
+#menuInternoTrigger {
+    position: fixed;
+    right: 10px;
+    top: 0;
+    height: 5rem;
+    text-align: center;
+    line-height: 5rem;
+    font-size: 3rem;
+    text-decoration: none;
+    -webkit-transform: rotate(90deg);
+    padding: 0 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+
+
+    color: #FFF;
+}
+#menuInterno {
+    position: fixed;
+    top: 5.1rem;
+    right: 100%;
+    width: 50%;
+    list-style: none;
+    margin: 0;
+    
+    -webkit-transition: all 200ms;
+    
+    
+    background-color: #000;
+    color: #FFF;
+}
+#menuTrigger:checked + #menuInterno {
+    right: 0;
+}
+#menuInterno li {
+    height: 6rem;
+    line-height: 6rem;
+    font-size: 2.2rem;
+    
+    border-top: 0.1rem solid #FFF;
+}
+#menuInterno li:first-child {
+    border-top: 0;
+}
+#menuInterno li label {
+    display: block;
+    cursor: pointer;
+}
+/** NAV FIM **/
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    body {
+    }
+}
+
