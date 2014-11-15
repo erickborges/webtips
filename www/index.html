@@ -26,127 +26,86 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" href="css/chui-min.css">
         <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/pageTransitions.css">
+        <link rel="stylesheet" href="css/menuAnimations.css">
         <title>Web Tips</title>
     </head>
-    <body>
+    <body ng-app="myApp">
         
-        <nav>
-          <h1>Web Tips</h1>
-        </nav>
-        <article id='main' class='current'>
-            <section>
-                <h2>Web Tips</h2>
-                <ul class='list' id="mainPageList">
-                    <li class='nav' id="goToHtml" data-goto="pagingContent">
-                        <h3>HTML</h3>
-                    </li>
-                    <li class='nav' id="goToCss" data-goto="pagingContent">
-                        <h3>CSS</h3>
-                    </li>
-                    <li class='nav' id="goToSvg" data-goto="pagingContent">
-                        <h3>SVG</h3>
-                    </li>
-                </ul>
-                <a class="marca" href="http://www.erickborges.com.br" target="_blank"><img src="img/logo.png" /></a>
-            </section>
-        </article>
-        
-        <!-- HTML -->
-        <nav>
-            <h1 id="titleContent">Web Tips <span>{</span><span class="titleHolder"></span><span>}</span></h1>
-            <div class='segmented paging horizontal align-flush'>
-                <a class='button' href='javascript:void(null)' title='previous panel'></a>
-                <a class='button' href='javascript:void(null)' title='next panel'></a>
+        <div ng-controller="PanelController as panel">
+            
+            <div ng-class="{ active: panel.isSelected(1) }" id="topo">
+                <div id="topoEsquerdo">
+                    <!-- <input type="radio" id="selectMenuBack" class="input-hide" name="selectMenuX" />
+                    <label for="selectMenuBack" ng-click="go('back', 'slideRight'); "><</label> -->
+                    <h1>Web Tips</h1>
+                </div>
+                <div id="topoDireito">
+                    <label for="selectMenuTopo">|||</label>
+                    <input type="checkbox" id="selectMenuTopo" class="input-hide" />
+                    <ul>
+                        <li><label ng-class="{ active: panel.isSelected(1) }" ng-click="go('/home', 'crossFade'); panel.selectTab(1)">Home</label></li>
+                        <li><label>Config</label></li>
+                    </ul>
+                </div>
             </div>
-        </nav>
-        <article id='pagingContent' class='paging'>
-                        
-        </article>
         
-        <!-- CONFIG -->
-        <nav>
-            <h1>Configurações</h1>
-        </nav>
-        <article id='config'>
-                        
-        </article>
+            <!-- Header -->
+            <nav ng-class="{ active: panel.isSelected(1) }">                
+                <input type="radio" id="selectMenuHtml" class="input-hide" name="selectMenu" />
+                <label id="forSelectMenuHtml" ng-class="{ active: panel.isSelected(2) }" ng-click="go('/html', 'slideRight'); panel.selectTab(2)">HTML</label>
+                
+                <input type="radio" id="selectMenuCss" class="input-hide" name="selectMenu" />
+                <label id="forSelectMenuCss" ng-class="{ active: panel.isSelected(3) }" ng-click="go('/css', 'slideDown'); panel.selectTab(3)">CSS</label>
+                
+                <input type="radio" id="selectMenuSvg" class="input-hide" name="selectMenu" />
+                <label id="forSelectMenuSvg" ng-class="{ active: panel.isSelected(4) }" ng-click="go('/svg', 'slideLeft'); panel.selectTab(4)">SVG</label>
+            </nav>
         
-        <label for="menuTrigger" id='menuInternoTrigger'>|||</label>
-        <input type="checkbox" id="menuTrigger" />
-        <ul id="menuInterno">
-            <li id="goToHomeScreen"><label for="menuTrigger">Home Screen</label></li>
-            <li id="goToConfig"><label for="menuTrigger">Configurações</label></li>
-        </ul>
+            <!-- App Content Container -->
+            <div class="page-container">
+                <div ng-view="" class="page-view" ng-class="pageAnimationClass"></div>
+            </div>
         
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="js/chui-3.7.0.min.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
+            <!-- Example page partials -->
+            <script type="text/ng-template" id="home.html">
+                <div id="home" class="pages">
+                    <home-file></home-file>
+                </div>
+            </script>
+        
+            <script type="text/ng-template" id="html.html">
+                <div id="html" class="pages inner-page" ng-swipe-left="go('/css', 'slideLeft'); panel.selectTab(3)">
+                    <html-file></html-file>
+                </div>
+            </script>
+        
+            <script type="text/ng-template" id="css.html">
+                <div id="css" class="pages inner-page" ng-swipe-right="go('/html', 'slideRight'); panel.selectTab(2)" ng-swipe-left="go('/svg', 'slideLeft'); panel.selectTab(4)">
+                    <css-file></css-file>
+                </div>
+            </script>
             
-
-            $(function() {
-                
-                $("#goToHtml").on('singletap', function(){
-                    $("#titleContent .titleHolder").html("HTML");
-                    $.ajax({
-                        url : 'ajax/html.html',
-                        success: function(data) {
-                            $("#pagingContent").append(data);
-                            $.UIPaging();
-                        }
-                    });
-                });
-                
-                $("#goToCss").on('singletap', function(){
-                    $("#titleContent .titleHolder").html("CSS");
-                    $.ajax({ 
-                        url : 'ajax/css.html',
-                        success: function(data) {
-                            $("#pagingContent").append(data);
-                            $.UIPaging();
-                        }
-                    });
-                });
-                
-                $("#goToSvg").on('singletap', function(){
-                    $("#titleContent .titleHolder").html("SVG");  
-                    $.ajax({ 
-                        url : 'ajax/svg.html',
-                        success: function(data) {
-                            $("#pagingContent").append(data);
-                            $.UIPaging();
-                        }
-                    });
-                });
-                
-                /*
-                $("#menuInternoTrigger").on('singletap', function(){
-                    if ( $(this).hasClass('active') == false) {
-                        $(this).addClass('triggered');
-                        $('#menuInterno').addClass('active');
-                    } else if ( $(this).hasClass('active') == true) {
-                        $(this).removeClass('triggered');
-                        $('#menuInterno').removeClass('active');
-                    }
-                });*/
-                    
-                
-                $("#goToHomeScreen").on('singletap', function(){
-                    $.UIGoToArticle("#main");
-                    $('#menuInterno').removeClass('active');
-                });
-                $("#goToConfig").on('singletap', function(){
-                    $.UIGoToArticle("#config");
-                    $('#menuInterno').removeClass('active');
-                });
-               
-            });
+            <script type="text/ng-template" id="svg.html">
+                <div id="svg" class="pages inner-page" ng-swipe-right="go('/css', 'slideRight'); panel.selectTab(3)" >
+                    <svg-file></svg-file>
+                </div>
+            </script>
             
+        </div>
+        
+        <script src="lib/jquery-1.7.2.min.js"></script>
+        <script src="lib/angular.js"></script>
+        <script src="lib/angular-touch.js"></script>
+        <script src="lib/angular-resource.js"></script>
+        <script src="lib/angular-animate.js"></script>
+        <script src="lib/angular-route.js"></script>
+        
+        <script>
+            var j = jQuery.noConflict();
         </script>
         
+        <script src="js/index.js"></script>
     </body>
 </html>

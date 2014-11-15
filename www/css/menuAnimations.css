@@ -1,0 +1,70 @@
+
+/* Menu Animations */
+/*
+body.run-home-animation {
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 1400ms;
+    -webkit-transition-delay: 200ms;
+    
+    background: #8EC285;
+}*/
+
+body.run-home-animation #tituloHome,
+body.run-home-animation footer {
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 600ms;
+    -webkit-transition-delay: 200ms;
+    
+    z-index: 10;
+}
+body.run-home-animation #tituloHome {
+    top: -10rem;
+}
+body.run-home-animation #home + footer {
+    bottom: -7rem;
+}
+
+body.run-home-animation #fake-nav .fake-nav-change {
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 600ms;
+    -webkit-transition-delay: 600ms;
+    
+    font-size: 0;
+    width: 0;
+    color: #5a9f4e;
+}
+body.run-home-animation #fake-nav .fake-nav-item.fake-item-active {
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 1400ms;
+    -webkit-transition-delay: 200ms;
+    
+    background-color: #000;
+    line-height: 6rem;
+    font-size: 2rem;
+    top: -0.5rem;
+}
+/*
+body .home-animation-aux .stripes {
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 600ms;
+    -webkit-transition-delay: 500ms;
+    
+    position: absolute;
+    top: 0;
+    bottom: 100%;
+    z-index: 0;
+    text-align: center;
+    background: #FFF;
+    
+    left: 0;
+    right: 0;
+}
+body.run-home-animation .home-animation-aux .stripes {
+    bottom: 0;
+}
+body.run-home-animation .home-animation-aux .stripes.triple-stripes {
+
+}
+body.run-home-animation .home-animation-aux .stripes.quadruple-stripes {
+    
+}*/

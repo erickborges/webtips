@@ -1,0 +1,63 @@
+
+<h1 ng-class="{ active: panel.isSelected(1) }" id="tituloHome">Web Tips</h1>
+<article id="home">
+    <section id="fake-nav">
+        <span ng-click class="fake-nav-item fake-html click-contraste">HTML</span>
+        <span ng-click class="fake-nav-item fake-css click-contraste">CSS</span>
+        <span ng-click class="fake-nav-item fake-svg click-contraste">SVG</span>
+    </section>
+</article>
+<footer>
+    <h2 id="marcaRodape">
+        <a href="http://www.erickborges.com.br" target="_blank"><img src="img/logo.png" /></a>
+    </h2>
+</footer>
+
+<div class="home-animation-aux">
+    <div class="stripes"></div>
+    <div class="glow"></div>
+</div>
+
+<script>
+    j(document).ready(function(){
+        function homeAnimation() {
+            function addClassHomeAnimation(element, stripes) {
+                j('body').addClass('run-home-animation');
+                j(element).prevAll().addClass('fake-nav-change');
+                j(element).nextAll().addClass('fake-nav-change');
+                j(element).addClass('fake-item-active');
+            }
+            function removeClassHomeAnimation(element) {
+                debugger;
+                j('body').removeClass('run-home-animation');
+                j(element).prevAll().removeClass('fake-nav-change');
+                j(element).nextAll().removeClass('fake-nav-change');
+                j(element).removeClass('fake-item-active');
+            }
+            
+            j('#fake-nav .fake-html').click(function() {
+                addClassHomeAnimation('#fake-nav .fake-html');
+                setTimeout (function(){
+                    removeClassHomeAnimation('#fake-nav .fake-html');
+                    j('#forSelectMenuHtml').click();
+                }, 1800);
+            });
+            j('#fake-nav .fake-css').click(function() {
+                addClassHomeAnimation('#fake-nav .fake-css');
+                setTimeout (function(){
+                    removeClassHomeAnimation('#fake-nav .fake-css');
+                    j('#forSelectMenuCss').click();
+                }, 1800);
+            });
+            j('#fake-nav .fake-svg').click(function() {
+                addClassHomeAnimation('#fake-nav .fake-svg');
+                setTimeout (function(){
+                    removeClassHomeAnimation('#fake-nav .fake-svg');
+                    j('#forSelectMenuSvg').click();
+                }, 1800);
+            });
+        }
+        homeAnimation();
+        
+    });
+</script>
