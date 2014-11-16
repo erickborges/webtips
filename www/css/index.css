@@ -48,7 +48,7 @@ body {
     width: 100%;
     z-index: 3;
     
-    height: 4rem;
+    height: 5rem;
     background: none #000;
     color: #FFF;
     font-size: 0;
@@ -67,7 +67,7 @@ body {
     text-align: right;
 }
 #topo h1 {
-    line-height: 4rem;
+    line-height: 5rem;
     font-size: 1.8rem;
     display: inline-block;
     vertical-align: middle;
@@ -87,26 +87,23 @@ body {
     position: relative;
 }
 #topo #topoDireito > label {
+    font-size: 2.6rem;
     -webkit-transform-origin: 50% 50%;
     -webkit-transform: rotate(90deg);
 }
 #topo #topoDireito ul {
-    max-height: 0;
     position: fixed;
-    top: 4rem;
-    right: 0;
+    top: 5rem;
+    right: 100%;
     background: #000;
-    
-    padding: 0;
-    border-radius: 0 0 0 18rem;
+    overflow: hidden;
+    z-index: 999;
 }
-#topo #topoDireito #selectMenuTopo:checked + ul {
+#topo #topoDireito ul.menu-topo-active {
     -webkit-transition-property: all;
     -webkit-transition-duration: 200ms;
     -webkit-transition-delay: 0;
-    
-    padding: 0 0 6rem 6rem;
-    max-height: 30rem;
+    right: 0;
 }
 #topo #topoDireito ul li {
     padding: 1rem 0;
@@ -114,6 +111,19 @@ body {
 #topo #topoDireito ul li label {
     padding-right: 3rem;
     padding-left: 3rem;
+}
+#topo #topoDireito .mask-menu {
+    position: fixed;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background: none transparent;
+    padding: 0;
+    margin: 0;
+}
+#topo #topoDireito ul.menu-topo-active + .mask-menu {
+    bottom: 0;
 }
 
 h1#tituloHome {
@@ -139,7 +149,7 @@ h1#tituloHome.active {
 nav {
     position: fixed;
     z-index: 2;
-    top: 4rem;
+    top: 5rem;
     left: 0;
     text-align: center;
 
@@ -219,7 +229,7 @@ nav.active {
     width: 100%;
     bottom: 2%;
     overflow: auto;
-    top: 9.2rem; /* .2 = border nav */
+    top: 10.2rem; /* .2 = border nav */
     
     /*transform*/
 
@@ -256,9 +266,11 @@ nav.active {
     height: inherit;
     padding: 2rem 1rem;
     position: relative;
+    background: none #FFF;
 }
 #home.pages {
     padding: 0;
+    background: none transparent;
 }
 
 /* nav active - config by home active */
@@ -307,6 +319,29 @@ h2#marcaRodape a img {
     position: relative;
     bottom: 0;
     height: 7rem;
+}
+
+.content-article h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #000;
+}
+.content-article section {
+    padding: 3rem 0;
+    border-width: 1px 0 0;
+    border-style: solid;
+    border-color: #AAA;
+    font-size: 1.6rem;
+    text-align: justify;
+}
+.content-article h2 + section {
+    border-width: 0;
+    padding-top: 0;
+}
+.content-article section h3 {
+    font-size: 2.2rem;
+    margin: 0 0 0.5rem;
+    color: #5a9f4e;
 }
 
 

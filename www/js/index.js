@@ -243,3 +243,11 @@ myApp.controller("PanelController", function(){
 });
 
 
+j(document).ready(function(){
+    j('#topo [for="selectMenuTopo"]').click(function(){
+        j('#topoDireito ul').toggleClass('menu-topo-active');
+    });
+    j('#topoDireito ul label, #topoDireito .mask-menu').click(function(){
+        j('#topoDireito ul').toggleClass('menu-topo-active');
+    });
+});

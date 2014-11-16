@@ -42,12 +42,13 @@
                     <h1>Web Tips</h1>
                 </div>
                 <div id="topoDireito">
-                    <label for="selectMenuTopo">|||</label>
-                    <input type="checkbox" id="selectMenuTopo" class="input-hide" />
+                    <label ng-click for="selectMenuTopo">|||</label>
+                    <!-- <input type="checkbox" id="selectMenuTopo" class="input-hide" /> -->
                     <ul>
                         <li><label ng-class="{ active: panel.isSelected(1) }" ng-click="go('/home', 'crossFade'); panel.selectTab(1)">Home</label></li>
                         <li><label>Config</label></li>
                     </ul>
+                    <div class="mask-menu"></div>
                 </div>
             </div>
         
@@ -94,6 +95,8 @@
             </script>
             
         </div>
+
+        <div class="home-animation-aux"></div>
         
         <script src="lib/jquery-1.7.2.min.js"></script>
         <script src="lib/angular.js"></script>

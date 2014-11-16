@@ -13,11 +13,6 @@
     </h2>
 </footer>
 
-<div class="home-animation-aux">
-    <div class="stripes"></div>
-    <div class="glow"></div>
-</div>
-
 <script>
     j(document).ready(function(){
         function homeAnimation() {
@@ -40,21 +35,21 @@
                 setTimeout (function(){
                     removeClassHomeAnimation('#fake-nav .fake-html');
                     j('#forSelectMenuHtml').click();
-                }, 1800);
+                }, 1300);
             });
             j('#fake-nav .fake-css').click(function() {
                 addClassHomeAnimation('#fake-nav .fake-css');
                 setTimeout (function(){
                     removeClassHomeAnimation('#fake-nav .fake-css');
                     j('#forSelectMenuCss').click();
-                }, 1800);
+                }, 1300);
             });
             j('#fake-nav .fake-svg').click(function() {
                 addClassHomeAnimation('#fake-nav .fake-svg');
                 setTimeout (function(){
                     removeClassHomeAnimation('#fake-nav .fake-svg');
                     j('#forSelectMenuSvg').click();
-                }, 1800);
+                }, 1300);
             });
         }
         homeAnimation();
