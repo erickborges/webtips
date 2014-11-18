@@ -94,31 +94,6 @@ myApp.run(['$rootScope', '$location', '$window', function ($rootScope, $location
      * @param  {String} path               The root-relative url for the new route
      * @param  {String} pageAnimationClass A classname defining the desired page transition
      */
-     
-    /*function changeSlide() {            
-        $('nav a').each(function(){
-            $(this).bind('click', function() {
-                $(this).prevAll().each(function(){
-                    var ngcAttrPAll = $(this).attr('ng-click');
-                    //alert(ngcAttrPAll);
-                    var ngcAttrSplitPAll = ngcAttrPAll.split(',');
-                    var ngcAttrPartPAll = ngcAttrSplitPAll[0];
-                    //alert(ngcAttrPartPAll);
-                    
-                    $(this).attr("ng-click","" + ngcAttrPartPAll + ", 'slideRight'");
-                });
-                $(this).nextAll().each(function(){
-                    var ngcAttrNAll = $(this).attr('ng-click');
-                    //alert(ngcAttrNAll);
-                    var ngcAttrSplitNAll = ngcAttrNAll.split(',');
-                    var ngcAttrPartNAll = ngcAttrSplitNAll[0];
-                    //alert(ngcAttrPartNAll);
-                    
-                    $(this).attr("ng-click","" + ngcAttrPartNAll + ", 'slideLeft'");
-                });
-            });
-        });
-    }*/
     
     $rootScope.go = function (path, pageAnimationClass) {
 
@@ -173,7 +148,8 @@ myApp.directive('sibs', function() {
     }
 });
 
-function MyCtrl($scope) {
+function ActiveNav($scope) {
+    $scope.activeItem = 'default';
 }*/
 
 // Configure the main module
@@ -183,24 +159,19 @@ myApp.config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
         .when('/home', {
-            templateUrl: 'home.html',
-            //mainMenu: false
+            templateUrl: 'home.html'
         })
         .when('/html', {
-            templateUrl: 'html.html',
-            //mainMenu: true
+            templateUrl: 'html.html'
         })
         .when('/css', {
-            templateUrl: 'css.html',
-            //mainMenu: true
+            templateUrl: 'css.html'
         })
         .when('/svg', {
-            templateUrl: 'svg.html',
-            //mainMenu: true
+            templateUrl: 'svg.html'
         })
         .otherwise({
-           templateUrl: 'home.html' ,
-            //mainMenu: false
+           templateUrl: 'home.html'
         });
 }]);
 
@@ -232,15 +203,17 @@ myApp.directive('svgFile', function(){
     };
 });
 
-myApp.controller("PanelController", function(){
-    this.tab = 1;
-    this.selectTab = function(setTab) {
-        this.tab = setTab;
-    };
-    this.isSelected = function(checkTab){
-        return this.tab === checkTab;
-    };
-});
+function ActiveNav($scope, $location) {
+
+    $scope.getClass = function(path) {
+        if ($location.path().substr(0, path.length) == path) {
+          return "active"
+        } else {
+          return ""
+        }
+    }
+    
+}
 
 
 j(document).ready(function(){

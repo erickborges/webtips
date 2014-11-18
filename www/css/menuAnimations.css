@@ -25,13 +25,14 @@ body.run-home-animation #home + footer {
 }
 
 body.run-home-animation #fake-nav .fake-nav-change {
-    -webkit-transition-property: all;
+    /*-webkit-transition-property: all;
     -webkit-transition-duration: 600ms;
     -webkit-transition-delay: 200ms;
     
     font-size: 0;
     width: 0;
-    color: #5a9f4e;
+    color: #5a9f4e;*/
+    visibility: hidden;
 }
 body.run-home-animation #fake-nav .fake-nav-item.fake-item-active {
     -webkit-transition-property: all;
