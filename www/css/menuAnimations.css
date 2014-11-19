@@ -45,22 +45,34 @@ body.run-home-animation #fake-nav .fake-nav-item.fake-item-active {
 body .home-animation-aux {
     background: none transparent;
     position: fixed;
-    left: 50%;
-    right: 50%;
-    top: 50%;
-    bottom: 50%;
+    left: 0;
+    right: 0;
+    top: 100%;
+    bottom: -100%;
     z-index: -1;
-    border-radius: 50%;
     
     -webkit-transition-property: all;
-    -webkit-transition-duration: 800ms;
-    -webkit-transition-delay: 200ms;
+    -webkit-transition-duration: 200ms;
+    -webkit-transition-delay: 0;
+    
+    /*transition-property*/
+    -webkit-transition-property: all;
+       -moz-transition-property: all;
+         -o-transition-property: all;
+            transition-property: all;
 }
 body.run-home-animation .home-animation-aux {
-    left: -100%;
+    /*left: -100%;
     right: -100%;
     top: -100%;
-    bottom: -100%;
+    bottom: -100%;*/
+    /*transform*/
+    -webkit-transform: translate3d(0,-100%,0);
+       -moz-transform: translate3d(0,-100%,0);
+        -ms-transform: translate3d(0,-100%,0);
+         -o-transform: translate3d(0,-100%,0);
+            transform: translate3d(0,-100%,0);
+    
     background: none #000;
 }
 /*

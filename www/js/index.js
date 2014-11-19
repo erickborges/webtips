@@ -206,7 +206,7 @@ myApp.directive('svgFile', function(){
 function ActiveNav($scope, $location) {
 
     $scope.getClass = function(path) {
-        if ($location.path().substr(0, path.length) == path) {
+        if ($location.path().substr(0, path.length) == path || $location.path().substr(0, path.length) == 0) {
           return "active"
         } else {
           return ""
