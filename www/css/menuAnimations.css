@@ -34,7 +34,8 @@ body.run-home-animation #fake-nav .fake-nav-change {
     color: #5a9f4e;*/
     visibility: hidden;
 }
-body.run-home-animation #fake-nav .fake-nav-item.fake-item-active {
+body.run-home-animation #fake-nav .fake-nav-item.fake-item-active,
+body.dark.run-home-animation #fake-nav .fake-nav-item.fake-item-active {
     -webkit-transition-property: all;
     -webkit-transition-duration: 800ms;
     -webkit-transition-delay: 200ms;
@@ -60,6 +61,12 @@ body .home-animation-aux {
        -moz-transition-property: all;
          -o-transition-property: all;
             transition-property: all;
+            
+    -webkit-transform: translate3d(0,0,0);
+       -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+         -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
 }
 body.run-home-animation .home-animation-aux {
     /*left: -100%;
@@ -75,28 +82,21 @@ body.run-home-animation .home-animation-aux {
     
     background: none #000;
 }
-/*
-body .home-animation-aux .stripes {
-    -webkit-transition-property: all;
-    -webkit-transition-duration: 600ms;
-    -webkit-transition-delay: 500ms;
-    
-    position: absolute;
-    top: 0;
-    bottom: 100%;
-    z-index: 0;
-    text-align: center;
-    background: #FFF;
-    
-    left: 0;
-    right: 0;
-}
-body.run-home-animation .home-animation-aux .stripes {
-    bottom: 0;
-}
-body.run-home-animation .home-animation-aux .stripes.triple-stripes {
 
+
+
+/**** TEMA DARK INI ****/
+body.dark.run-home-animation #tituloHome {
+    color: #000;
 }
-body.run-home-animation .home-animation-aux .stripes.quadruple-stripes {
+body.dark.run-home-animation .home-animation-aux {    
+    background: none #FFF;
+}
+body.dark #fake-nav span {
+    -webkit-transition-property: color;
+    -webkit-transition-duration: 800ms;
+    -webkit-transition-delay: 200ms;
     
-}*/
+    color: #000;
+}
+/**** TEMA DARK FIM ****/

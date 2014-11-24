@@ -45,8 +45,8 @@
                     <label ng-click for="selectMenuTopo">|||</label>
                     <!-- <input type="checkbox" id="selectMenuTopo" class="input-hide" /> -->
                     <ul>
-                        <li><label ng-class="getClass('/home')" ng-click="go('/home', 'slideRight'); panel.selectTab(1)">Home</label></li>
-                        <li><label>Config</label></li>
+                        <li><label ng-class="getClass('/home')" ng-click="go('/home', 'slideRight');">Home</label></li>
+                        <li><label ng-class="getClass('/config')" ng-click="go('/config', 'slideLeft');">Config</label></li>
                     </ul>
                     <div class="mask-menu"></div>
                 </div>
@@ -55,13 +55,13 @@
             <!-- Header -->
             <nav ng-class="getClass('/home')">                
                 <input type="radio" id="selectMenuHtml" class="input-hide" name="selectMenu" />
-                <label id="forSelectMenuHtml" ng-class="getClass('/html')"  ng-click="go('/html', 'slideRight'); panel.selectTab(2)">HTML</label>
+                <label id="forSelectMenuHtml" ng-class="getClass('/html')"  ng-click="go('/html', 'slideRight');">HTML</label>
                 
                 <input type="radio" id="selectMenuCss" class="input-hide" name="selectMenu" />
-                <label id="forSelectMenuCss" ng-class="getClass('/css')"  ng-click="go('/css', 'slideDown'); panel.selectTab(3)">CSS</label>
+                <label id="forSelectMenuCss" ng-class="getClass('/css')"  ng-click="go('/css', 'slideDown');">CSS</label>
                 
                 <input type="radio" id="selectMenuSvg" class="input-hide" name="selectMenu" />
-                <label id="forSelectMenuSvg" ng-class="getClass('/svg')"  ng-click="go('/svg', 'slideLeft'); panel.selectTab(4)">SVG</label>
+                <label id="forSelectMenuSvg" ng-class="getClass('/svg')"  ng-click="go('/svg', 'slideLeft');">SVG</label>
             </nav>
         
             <!-- App Content Container -->
@@ -77,20 +77,26 @@
             </script>
         
             <script type="text/ng-template" id="html.html">
-                <div id="html" class="pages inner-page" ng-swipe-left="go('/css', 'slideLeft'); panel.selectTab(3)">
+                <div id="html" class="pages inner-page" ng-swipe-left="go('/css', 'slideLeft');">
                     <html-file></html-file>
                 </div>
             </script>
         
             <script type="text/ng-template" id="css.html">
-                <div id="css" class="pages inner-page" ng-swipe-right="go('/html', 'slideRight'); panel.selectTab(2)" ng-swipe-left="go('/svg', 'slideLeft'); panel.selectTab(4)">
+                <div id="css" class="pages inner-page" ng-swipe-right="go('/html', 'slideRight');" ng-swipe-left="go('/svg', 'slideLeft');">
                     <css-file></css-file>
                 </div>
             </script>
             
             <script type="text/ng-template" id="svg.html">
-                <div id="svg" class="pages inner-page" ng-swipe-right="go('/css', 'slideRight'); panel.selectTab(3)" >
+                <div id="svg" class="pages inner-page" ng-swipe-right="go('/css', 'slideRight');" ng-swipe-left="go('/config', 'slideLeft');">
                     <svg-file></svg-file>
+                </div>
+            </script>
+            
+            <script type="text/ng-template" id="config.html">
+                <div id="config" class="pages inner-page" ng-swipe-right="go('/svg', 'slideRight');" >
+                    <config-file></config-file>
                 </div>
             </script>
             

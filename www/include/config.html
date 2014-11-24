@@ -1,0 +1,78 @@
+<article id="config" class="content-article">
+    <h2>Configurações</h2>
+    <section>
+        <form>
+            <div class="campo campo-radio">
+                <div>
+                    <label for="">Mostrar animações da Home</label>
+                </div>
+                <div>
+                    <div class="radio-check-wrap">
+                        <input type="radio" name="switchAnimHome" id="animYes" class="input-hide"/>
+                        <label for="animYes"><span>Sim</span></label>
+                        <input type="radio" name="switchAnimHome" id="animNo" class="input-hide" />
+                        <label for="animNo"><span>Não</span></label>
+                    </div>
+                </div>
+            </div>
+            <div class="campo campo-radio">
+                <div>
+                    <label for="">Tema</label>
+                </div>
+                <div>
+                    <div class="radio-check-wrap">
+                        <input type="radio" name="switchTema" id="temaLight" class="input-hide"/>
+                        <label for="temaLight"><span>Light</span></label>
+                        <input type="radio" name="switchTema" id="temaDark" class="input-hide" />
+                        <label for="temaDark"><span>Dark</span></label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+</article>
+
+
+
+<script>
+    j(document).ready(function(){
+        
+        j('label[for="animYes"]').click(function(){
+            localStorage.homeAnimation = 'anime';
+        });
+        j('label[for="animNo"]').click(function(){
+            localStorage.homeAnimation = 'dont-anime';
+        });
+        
+        j('label[for="temaLight"]').click(function(){
+            localStorage.appTema = 'light';
+            j('body').removeClass('dark');
+        });
+        j('label[for="temaDark"]').click(function(){
+            localStorage.appTema = 'dark';
+            j('body').addClass('dark');
+        });
+    });
+    
+    if (localStorage.getItem('homeAnimation') !== null) {
+        if (localStorage.getItem('homeAnimation') === 'anime') {
+            j('#animNo').removeAttr('checked');
+            j('#animYes').attr('checked','checked');
+        } else if (localStorage.getItem('homeAnimation') === 'dont-anime') {
+            j('#animYes').removeAttr('checked');
+            j('#animNo').attr('checked','checked');
+        }
+    }
+    
+    if (localStorage.getItem('appTema') !== null) {
+        if (localStorage.getItem('appTema') === 'light') {
+            j('#temaDark').removeAttr('checked');
+            j('#temaLight').attr('checked','checked');
+            j('body').removeClass('dark');
+        } else if (localStorage.getItem('appTema') === 'dark') {
+            j('#temaLight').removeAttr('checked');
+            j('#temaDark').attr('checked','checked');
+            j('body').addClass('dark');
+        }
+    }
+</script>

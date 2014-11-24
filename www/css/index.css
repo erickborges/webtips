@@ -33,7 +33,6 @@ html {
 body {
     height: 100%;
     font-family: roboto, arial, helvetica, sans-serif;
-    background: #FFF;
 }
 
 .input-hide {
@@ -49,8 +48,6 @@ body {
     z-index: 3;
     
     height: 5rem;
-    background: none #000;
-    color: #FFF;
     font-size: 0;
 }
 #topoEsquerdo,
@@ -78,7 +75,6 @@ body {
     vertical-align: middle;
     font-size: 2.4rem;
     padding: 0.5rem;
-    color: #FFF;
 }
 #topo label[for="selectMenuBack"] {
     padding: 0.5rem 1rem;
@@ -95,7 +91,6 @@ body {
     position: fixed;
     top: 5rem;
     right: 100%;
-    background: #000;
     overflow: hidden;
     z-index: 999;
 }
@@ -128,7 +123,6 @@ body {
 
 h1#tituloHome {
     display: none;
-    color: #5a9f4e;
     text-align: center;
     line-height: 10rem;
     font-size: 3rem;
@@ -155,11 +149,8 @@ nav {
 
     width: 100%;
     font-size: 0;
-
-    background-color: #fff;
     border-width: 0 0 0.2rem;
     border-style: solid;
-    border-color: #5a9f4e;
 }
 nav label {
     display: inline-block;
@@ -182,7 +173,6 @@ nav label::before {
     left: 0;
     width: 100%;
     height: 0;
-    background-color: #5a9f4e;
     
     -webkit-transition: all 200ms;
 }
@@ -215,9 +205,6 @@ nav.active {
     left: 0;
     
     z-index: 20;
-    
-    background: none #5a9f4e;
-    color: #FFF;
 }
 /** NAV FIM **/
 
@@ -247,9 +234,6 @@ nav.active {
     width: 100%;
     height: 100%;
 
-    /*color: #fff;
-    backface-visibility*/
-
     -webkit-backface-visibility: hidden;
        -moz-backface-visibility: hidden;
         -ms-backface-visibility: hidden;
@@ -266,7 +250,6 @@ nav.active {
     height: inherit;
     padding: 2rem 1rem;
     position: relative;
-    background: none #FFF;
 }
 #home.pages {
     padding: 0;
@@ -290,23 +273,6 @@ nav.active + .page-container .page-view.ng-leave {
 #home {
     overflow: hidden;
 }
-/*
-#html {
-    background-color: rgba(200,200,20,0.5);
-}
-#css {
-    background-color: rgba(250,50,50,0.5);
-}
-#svg {
-    background-color: rgba(10,10,100,0.5);
-}*/
-
-.ng-click-active {
-    box-shadow: inset 0 0 2rem #5a9f4e;
-}
-.click-contraste.ng-click-active {
-    box-shadow: inset 0 0 2rem #222;
-}
 
 
 h2#marcaRodape {
@@ -328,13 +294,11 @@ h2#marcaRodape a img {
 .content-article h2 {
     font-size: 3rem;
     margin-bottom: 2rem;
-    color: #000;
 }
 .content-article section {
     padding: 3rem 0;
     border-width: 1px 0 0;
     border-style: solid;
-    border-color: #AAA;
     font-size: 1.6rem;
     text-align: justify;
 }
@@ -345,8 +309,242 @@ h2#marcaRodape a img {
 .content-article section h3 {
     font-size: 2.2rem;
     margin: 0 0 0.5rem;
+}
+
+/** forms ini **/
+.campo {
+    margin: 2rem 0;
+}
+.campo-radio {
+    font-size: 0;
+}
+.campo-radio>div {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+    font-size: 1.6rem;
+    text-align: right;
+}
+.campo-radio>div:first-child {
+    text-align: left;
+}
+.radio-check-wrap {
+    display: inline-block;
+    font-size: 0;
+    padding: 0.3rem;
+    border: 1px solid #999;
+    border-radius: 0.3rem;
+    width: 13rem;
+}
+.radio-check-wrap label {
+    margin: 0;
+    padding: 0.5rem 1.5rem;
+    position: relative;
+    line-height: 1.6rem;
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.6rem;
+    z-index: 2;
+}
+.radio-check-wrap label span {
+    position: relative;
+    display: inline-block;
+    visibility: hidden;
+    
+    -webkit-transition-delay: 100ms;
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 100ms;
+}
+.radio-check-wrap label::after {
+    content: "";
+    position: absolute;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+.radio-check-wrap input:first-child + label::after {
+    right: -100%;
+    left: 0;
+}
+.radio-check-wrap input[type="radio"]:checked + label span {
+    visibility: visible;
+}
+.radio-check-wrap input[type="radio"]:first-child + label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    vertical-align: middle;
+    
+    -webkit-transition-delay: 100ms;
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 200ms;
+}
+
+.radio-check-wrap input[type="radio"]:checked + label {
+    z-index: 1;
+}
+.radio-check-wrap input[type="radio"]:checked:first-child + label::before {
+    left: 100%;
+    right: -100%;
+}
+/** forms fim **/
+
+
+/**** TEMA LIGHT INI ****/
+body {
+    background: #FFF;
+    color: #000;
+}
+
+/** TOPO INI **/
+#topo {
+    background: #000;
+    color: #FFF;
+}
+#topo #topoDireito ul {
+    background: #000;
+}
+h1#tituloHome {
     color: #5a9f4e;
 }
+/** TOPO INI **/
+
+
+/** NAV INI **/
+nav {
+    background-color: #fff;
+    border-color: #5a9f4e;
+}
+nav label {
+    color: #000;
+}
+nav label::before {
+    background-color: #5a9f4e;
+}
+
+/* nav active - config by home active */
+
+/* fake nav - config by home active */
+#fake-nav span {
+    background: none #5a9f4e;
+    color: #FFF;
+}
+/** NAV FIM **/
+
+
+/* partial containers */
+.pages {
+    background: none #FFF;
+}
+
+.ng-click-active {
+    box-shadow: inset 0 0 2rem #5a9f4e;
+}
+.click-contraste.ng-click-active {
+    box-shadow: inset 0 0 2rem #222;
+}
+
+.content-article h2 {
+    color: #000;
+}
+.content-article section {
+    border-color: #AAA;
+}
+.content-article section h3 {
+    color: #5a9f4e;
+}
+
+/** forms ini **/
+.radio-check-wrap input[type="radio"]:first-child + label::before {
+    background: #5a9f4e;
+    box-shadow: 0 0 3px #000, 0 0 3px #000;
+}
+/** forms fim **/
+
+/**** TEMA LIGHT FIM ****/
+
+
+/**** TEMA DARK INI ****/
+body.dark {
+    background: #111;
+    color: #FFF;
+}
+
+/** TOPO INI **/
+body.dark #topo {
+    background: #5a9f4e;
+    color: #FFF;
+}
+body.dark #topo #topoDireito ul {
+    background: #5a9f4e;
+}
+body.dark h1#tituloHome {
+    color: #FFF;
+}
+/** TOPO INI **/
+
+
+/** NAV INI **/
+body.dark nav {
+    background-color: #000;
+    border-color: #5a9f4e;
+}
+body.dark nav label {
+    color: #FFF;
+}
+body.dark nav label::before {
+    background-color: #5a9f4e;
+}
+
+/* nav active - config by home active */
+
+/* fake nav - config by home active */
+body.dark #fake-nav span {
+    background: none #D4EAD0;
+    color: #000;
+}
+/** NAV FIM **/
+
+
+/* partial containers */
+body.dark .pages {
+    background: none #111;
+}
+
+body.dark .ng-click-active {
+    box-shadow: inset 0 0 2rem #FFF;
+}
+body.dark .click-contraste.ng-click-active {
+    box-shadow: inset 0 0 2rem #DDD;
+}
+
+body.dark .content-article h2 {
+    color: #FFF;
+}
+body.dark .content-article section {
+    border-color: #555;
+}
+body.dark .content-article section h3 {
+    color: #FFF;
+}
+
+/** forms ini **/
+body.dark .radio-check-wrap {
+    background: #000;
+}
+body.dark .radio-check-wrap input[type="radio"]:first-child + label::before {
+    background: #D4EAD0;
+    box-shadow: 0 0 3px #FFF, 0 0 3px #FFF;
+}
+/** forms fim **/
+
+/**** TEMA DARK FIM ****/
 
 
 @media all and (max-width: 450px) {

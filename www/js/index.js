@@ -170,6 +170,9 @@ myApp.config(['$routeProvider', function ($routeProvider) {
         .when('/svg', {
             templateUrl: 'svg.html'
         })
+        .when('/config', {
+            templateUrl: 'config.html'
+        })
         .otherwise({
            templateUrl: 'home.html'
         });
@@ -203,6 +206,13 @@ myApp.directive('svgFile', function(){
     };
 });
 
+myApp.directive('configFile', function(){
+    return {
+        restrict: 'E',
+        templateUrl: 'include/config.html'
+    };
+});
+
 function ActiveNav($scope, $location) {
 
     $scope.getClass = function(path) {
@@ -223,4 +233,23 @@ j(document).ready(function(){
     j('#topoDireito ul label, #topoDireito .mask-menu').click(function(){
         j('#topoDireito ul').toggleClass('menu-topo-active');
     });
+    
+    if (localStorage.getItem('homeAnimation') === null) {
+        localStorage.homeAnimation = 'anime';
+    }
+    
+    if (localStorage.getItem('appTema') === null) {
+        localStorage.appTema = 'light';
+    }
+    else if (localStorage.getItem('appTema') !== null && localStorage.getItem('appTema') === 'light') {
+        j('#temaDark').removeAttr('checked');
+        j('#temaLight').attr('checked','checked');
+        j('body').removeClass('dark');
+    }
+    else if (localStorage.getItem('appTema') !== null && localStorage.getItem('appTema') === 'dark') {
+        j('#temaLight').removeAttr('checked');
+        j('#temaDark').attr('checked','checked');
+        j('body').addClass('dark');
+    }
+    
 });
