@@ -317,10 +317,11 @@ h2#marcaRodape a img {
 }
 .campo-radio {
     font-size: 0;
+    text-align: center;
 }
 .campo-radio>div {
     display: inline-block;
-    width: 50%;
+    width: 49%;
     vertical-align: middle;
     font-size: 1.6rem;
     text-align: right;
@@ -335,13 +336,14 @@ h2#marcaRodape a img {
     border: 1px solid #999;
     border-radius: 0.3rem;
     width: 13rem;
+    text-align: center;
 }
 .radio-check-wrap label {
     margin: 0;
     padding: 0.5rem 1.5rem;
     position: relative;
     line-height: 1.6rem;
-    width: 50%;
+    width: 49%;
     display: inline-block;
     vertical-align: middle;
     font-size: 1.6rem;
@@ -351,10 +353,6 @@ h2#marcaRodape a img {
     position: relative;
     display: inline-block;
     visibility: hidden;
-    
-    -webkit-transition-delay: 100ms;
-    -webkit-transition-property: all;
-    -webkit-transition-duration: 100ms;
 }
 .radio-check-wrap label::after {
     content: "";
@@ -381,17 +379,31 @@ h2#marcaRodape a img {
     right: 0;
     vertical-align: middle;
     
-    -webkit-transition-delay: 100ms;
     -webkit-transition-property: all;
     -webkit-transition-duration: 200ms;
+    transition-property: all;
+    transition-duration: 200ms;
+    -webkit-transform: translate3d(0,0,0);
+       -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+         -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
 }
 
 .radio-check-wrap input[type="radio"]:checked + label {
     z-index: 1;
 }
 .radio-check-wrap input[type="radio"]:checked:first-child + label::before {
-    left: 100%;
+    /*left: 100%;
     right: -100%;
+    margin-left: 100%;
+    margin-right: -100%;*/
+    -webkit-transform: translate3d(100%,0,0);
+       -moz-transform: translate3d(100%,0,0);
+        -ms-transform: translate3d(100%,0,0);
+         -o-transform: translate3d(100%,0,0);
+            transform: translate3d(100%,0,0);
+    
 }
 /** forms fim **/
 
