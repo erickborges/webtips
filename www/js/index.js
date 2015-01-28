@@ -78,8 +78,8 @@ var menuItens = [
         active: false
     },
     {
-        name: "SVG",
-        goTo: "'/svg'",
+        name: "APP",
+        goTo: "'/app'",
         active: false
     }
 ]*/
@@ -167,8 +167,8 @@ myApp.config(['$routeProvider', function ($routeProvider) {
         .when('/css', {
             templateUrl: 'css.html'
         })
-        .when('/svg', {
-            templateUrl: 'svg.html'
+        .when('/app', {
+            templateUrl: 'app.html'
         })
         .when('/config', {
             templateUrl: 'config.html'
@@ -199,10 +199,10 @@ myApp.directive('cssFile', function(){
     };
 });
 
-myApp.directive('svgFile', function(){
+myApp.directive('appFile', function(){
     return {
         restrict: 'E',
-        templateUrl: 'include/svg.html'
+        templateUrl: 'include/app.html'
     };
 });
 

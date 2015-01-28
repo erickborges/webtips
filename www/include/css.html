@@ -1,21 +1,31 @@
 <article id="css" class="content-article">
     <h2>CSS</h2>
     <section>
-        <h3>Section 1 CSS</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta laborum veniam blanditiis deserunt dolorum molestias impedit sed harum ipsa aspernatur dolore quia veritatis esse vel laudantium corporis tempora non possimus earum sapiente labore debitis eligendi.</p>
-        <p>Molestiae harum placeat neque hic deleniti corrupti corporis reiciendis delectus iste minus obcaecati earum beatae optio quis ullam facere architecto nesciunt maiores error exercitationem necessitatibus repudiandae officia fugit totam quae recusandae repellat natus mollitia nisi.</p>
-        <p>Nisi obcaecati sit magnam vitae aliquam error laborum iusto odit deleniti impedit nemo illo voluptas voluptate eos officia consequuntur quae velit in placeat ratione sed beatae totam doloremque. Veniam nostrum atque iste reiciendis dolorem debitis.</p>
-    </section>
-    <section>
-        <h3>Section 2 CSS</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque animi amet consectetur autem cupiditate fugit pariatur aperiam minima illo itaque quidem dignissimos necessitatibus voluptatum libero odit quia aut voluptate laudantium quae expedita esse provident eveniet.</p>
-        <p>Nemo cumque aut blanditiis repudiandae eveniet aperiam dicta quas nam ducimus vel iste iusto magni perspiciatis minus amet porro voluptas beatae quam quasi consectetur distinctio doloribus cum molestiae voluptatibus nisi corporis possimus deleniti cupiditate sequi.</p>
-        <p>Adipisci mollitia quam nam aliquam voluptatum corporis dolorum culpa excepturi esse fuga ipsam asperiores ea blanditiis deserunt enim cupiditate accusamus ipsum nobis eum quis eos labore veritatis molestias quibusdam est perferendis pariatur. Enim nobis vero.</p>
-    </section>
-    <section>
-        <h3>Section 3 CSS</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto vel illo at ab delectus nobis accusantium labore dignissimos eos vero pariatur commodi quisquam possimus earum quia mollitia iure voluptatum repudiandae fugit placeat optio similique expedita.</p>
-        <p>Officia laboriosam similique explicabo maiores totam ipsam praesentium. Possimus illum odit est esse consequuntur numquam facilis repudiandae odio tenetur delectus ratione provident tempora porro aspernatur et placeat quas fuga obcaecati iure aliquam! Accusantium perspiciatis obcaecati.</p>
-        <p>Unde officia a quae pariatur impedit quas totam dolore nam ut rem saepe mollitia alias aliquid facilis neque ducimus voluptas necessitatibus dicta eius maxime sapiente dolorem sequi quam soluta quod? Tempore perferendis non laudantium sit.</p>
+        <h3>Dispor elementos em linha desconsiderando espaços em branco</h3>
+        <h4>Neste texto irei apresentar uma maneira simples e eficaz em dispor elementos em bloco, um lado de outro, desconsiderando os espaços em branco que forçam os elementos a quebrarem de linha.</h4>
+        <p>E para esta situação não queremos usar "float", nem "flex box" e "box sizing" ... hmmm ... não vai ajudar agora.</p>
+        <p>Citando como exemplo a estrutura HTML e estilos abaixo ...</p>
+        <div class="pre">&lt;div id="pai"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="filho filho-1"&gt;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="filho filho-2"&gt;&lt;/div&gt;<br />
+&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;#pai .filho {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;display: inline-block;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;width: 50%;<br />
+}</div>
+        <p>... Sabemos que os elementos ".filho" se comportarão em linha e block e terão metade da largura do elemento "#pai". Mas eles não ficarão lado a lado. Isto ocorre por causa dos espaços em branco presentes no documento HTML. Para resolver isto insira o estilo citado abaixo:</p>
+        <div class="pre">#pai {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;font-size: 0;<br />
+}</div>
+        <p>Definindo o "font-size" para "0" nós "removemos" o espaço em branco presente no documento. O único incoveniente é que os elementos ".filho" herdarão este estilo, então o "font-size" deverá ser definido para eles, resultando num código similar a este:</p>
+        <div class="pre">#pai {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;font-size: 0;<br />
+}<br />
+#pai .filho {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;display: inline-block;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;width: 50%;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;font-size: 1.2rem;<br />
+}</div>
+        <p>É uma técnica bem simples mas que lhe auxiliará muito em seus projetos!</p>
     </section>
 </article>

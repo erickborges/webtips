@@ -4,7 +4,7 @@
     <section id="fake-nav">
         <span ng-click class="fake-nav-item fake-html click-contraste">HTML</span>
         <span ng-click class="fake-nav-item fake-css click-contraste">CSS</span>
-        <span ng-click class="fake-nav-item fake-svg click-contraste">SVG</span>
+        <span ng-click class="fake-nav-item fake-app click-contraste">APP's</span>
     </section>
 </article>
 <footer>
@@ -54,9 +54,9 @@
                     j('#forSelectMenuCss').click();
                 }
             });
-            j('#fake-nav .fake-svg').click(function() {
+            j('#fake-nav .fake-app').click(function() {
                 if (localStorage.homeAnimation == 'anime') {
-                    clickTimeout('svg', 'Svg');
+                    clickTimeout('app', 'App');
                 } else {
                     j('#forSelectMenuSvg').click();
                 }

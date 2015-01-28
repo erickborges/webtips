@@ -1,21 +1,55 @@
 <article id="html" class="content-article">
     <h2>HTML</h2>
     <section>
-        <h3>Section 1 HTML</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta laborum veniam blanditiis deserunt dolorum molestias impedit sed harum ipsa aspernatur dolore quia veritatis esse vel laudantium corporis tempora non possimus earum sapiente labore debitis eligendi.</p>
-        <p>Molestiae harum placeat neque hic deleniti corrupti corporis reiciendis delectus iste minus obcaecati earum beatae optio quis ullam facere architecto nesciunt maiores error exercitationem necessitatibus repudiandae officia fugit totam quae recusandae repellat natus mollitia nisi.</p>
-        <p>Nisi obcaecati sit magnam vitae aliquam error laborum iusto odit deleniti impedit nemo illo voluptas voluptate eos officia consequuntur quae velit in placeat ratione sed beatae totam doloremque. Veniam nostrum atque iste reiciendis dolorem debitis.</p>
-    </section>
-    <section>
-        <h3>Section 2 HTML</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque animi amet consectetur autem cupiditate fugit pariatur aperiam minima illo itaque quidem dignissimos necessitatibus voluptatum libero odit quia aut voluptate laudantium quae expedita esse provident eveniet.</p>
-        <p>Nemo cumque aut blanditiis repudiandae eveniet aperiam dicta quas nam ducimus vel iste iusto magni perspiciatis minus amet porro voluptas beatae quam quasi consectetur distinctio doloribus cum molestiae voluptatibus nisi corporis possimus deleniti cupiditate sequi.</p>
-        <p>Adipisci mollitia quam nam aliquam voluptatum corporis dolorum culpa excepturi esse fuga ipsam asperiores ea blanditiis deserunt enim cupiditate accusamus ipsum nobis eum quis eos labore veritatis molestias quibusdam est perferendis pariatur. Enim nobis vero.</p>
-    </section>
-    <section>
-        <h3>Section 3 HTML</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto vel illo at ab delectus nobis accusantium labore dignissimos eos vero pariatur commodi quisquam possimus earum quia mollitia iure voluptatum repudiandae fugit placeat optio similique expedita.</p>
-        <p>Officia laboriosam similique explicabo maiores totam ipsam praesentium. Possimus illum odit est esse consequuntur numquam facilis repudiandae odio tenetur delectus ratione provident tempora porro aspernatur et placeat quas fuga obcaecati iure aliquam! Accusantium perspiciatis obcaecati.</p>
-        <p>Unde officia a quae pariatur impedit quas totam dolore nam ut rem saepe mollitia alias aliquid facilis neque ducimus voluptas necessitatibus dicta eius maxime sapiente dolorem sequi quam soluta quod? Tempore perferendis non laudantium sit.</p>
+        <h3>HTML Clique!</h3>
+        <h4>Mostrarei neste artigo como usar eventos de clique com HTML. Com essa técnica você poderá criar <strong>accordions</strong>, como será mostrado, sem uso de JS</h4>
+        <p>Quando queremos mostrar conteúdo em um website em forma de abas, por exemplo, logo pensamos em usar <strong>Javascript</strong>, <strong>jQuery</strong> ou outra biblioteca js para facilitar nosso trabalho. Porém, em algumas situações, complicamos a implementação ao invés de simplificá-la.</p>
+        <p>Ao usarmos um componente de abas, ou até mesmo de accordion, feito apenas com <strong>HTML</strong> e <strong>CSS</strong> teremos certeza que irá funcionar em navegadores com <strong>javascript</strong> desabilitado, navegadores mobile - sendo que bibliotecas javascript podem não funcionar corretamente neles - e <strong>web app's</strong>.</p>
+        <p>Uma vez me disseram que não há cliques em <strong>HTML</strong>. Mas e o <strong>radio button</strong>? E o <strong>checkbox</strong>? Quando são clicados podem ser associados ao psedo-elemento <strong>:checked</strong> do <strong>CSS</strong>, como mostrado abaixo:</p>
+        <div class="pre">
+&lt;div id="pai"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Radio&lt;/h3&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio" name="clickRadio" id="click1" /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="click1"&gt;Click 1&lt;/label&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio" name="clickRadio" id="click2" /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="click2"&gt;Click 2&lt;/label&gt;<br />
+&lt;/div&gt;<br /><br />
+&lt;div id="pai"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Checkbox&lt;/h3&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="checkbox" id="click3" /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="click3"&gt;Click 3&lt;/label&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="checkbox" id="click4" /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="click4"&gt;Click 4&lt;/label&gt;<br />
+&lt;/div&gt;
+        </div>
+        <p>Como podem ver, o importante desta técnica é usar o atributo <strong>for</strong> no <strong>label</strong> possuindo o mesmo valor do atributo <strong>id</strong> do <strong>input</strong>. Assim, o click no label marca o input correspondente.</p>
+        <p>E para criar o componente de abas veja a estrutura <strong>HTML</strong> e <strong>CSS</strong> abaixo:</p>
+        <div class="pre">
+&lt;div id="accordionGroup"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="accordion"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio" name="clickAccordion" id="accordionClick1" /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;&lt;label for="accordionClick1"&gt;Accordion Click 1&lt;/label&gt;&lt;/h3&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="accordion-content"&gt;Accordion Content 1&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+&lt;/div&gt;<br /><br />
+input[type="radio"] {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;display: none;<br />
+}<br />
+h3 {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;color: red;<br />
+}<br />
+input:checked + h3 {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;color: green;<br />
+}<br />
+.accordion-content {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;display: none;<br />
+}<br />
+input:checked ~ .accordion-content {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;display: block;<br />
+}<br />
+        </div>
+        <p>Colocar <strong>display: none;</strong> no <strong>input</strong> não afeta o funcionamento da técnica.</p>
+        <p>Então define-se os estilos padrões dos títulos, labels e conteúdo. Através dos operadores <strong>CSS</strong> <strong>+</strong> e <strong>~</strong> vinculado ao <strong>input</strong> clicado define-se os estilos para os elementos que ficarão em evidência.</p>
+        <p>O <strong>CSS</strong> do exemplo apenas mostra/oculta o conteúdo do accordion. Uma boa dica é usar animações e transições do <strong>CSS 3</strong> para você criar efeitos interessantes.</p>
     </section>
 </article> 

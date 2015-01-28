@@ -35,6 +35,13 @@ body {
     font-family: roboto, arial, helvetica, sans-serif;
 }
 
+p {
+    margin: 1rem 0;
+}
+hr {
+    margin: 2rem 0;
+}
+
 .input-hide {
     display: none;
 }
@@ -209,6 +216,9 @@ nav.active {
 }
 /** NAV FIM **/
 
+article {
+    padding: 0 0 1rem;
+}
 
 /* partial containers */
 .page-container {
@@ -295,21 +305,27 @@ h2#marcaRodape a img {
 .content-article h2 {
     font-size: 3rem;
     margin-bottom: 2rem;
+    text-align: center;
 }
 .content-article section {
-    padding: 3rem 0;
-    border-width: 1px 0 0;
-    border-style: solid;
+    margin: 5rem 0 2rem;
     font-size: 1.6rem;
     text-align: justify;
+    padding: 1rem;
 }
 .content-article h2 + section {
     border-width: 0;
-    padding-top: 0;
+    margin-top: 0;
 }
 .content-article section h3 {
     font-size: 2.2rem;
-    margin: 0 0 0.5rem;
+    margin: 0;
+    padding: 0 0 1.2rem;
+    border-bottom: 1px solid;
+}
+
+h4 {
+    margin: 2rem 0;
 }
 
 /** forms ini **/
@@ -399,6 +415,13 @@ h2#marcaRodape a img {
 }
 /** forms fim **/
 
+pre,
+.pre {
+    margin: 2rem 0.5rem;
+    padding: 1rem;
+    text-align: left;
+}
+
 
 /**** TEMA LIGHT INI ****/
 body {
@@ -458,10 +481,15 @@ nav label .destaque-menu {
     color: #000;
 }
 .content-article section {
-    border-color: #AAA;
+    box-shadow: 0 0 0.3rem #777;
 }
 .content-article section h3 {
     color: #5a9f4e;
+    border-color: #AAA;
+}
+
+h4 {
+    color: #333;
 }
 
 /** forms ini **/
@@ -470,6 +498,13 @@ nav label .destaque-menu {
     box-shadow: 0 0 3px #000, 0 0 3px #000;
 }
 /** forms fim **/
+
+pre,
+.pre {
+    background: #DDD;
+    color: 333;
+    border: 1px solid #AAA;
+}
 
 /**** TEMA LIGHT FIM ****/
 
@@ -532,9 +567,14 @@ body.dark .content-article h2 {
     color: #FFF;
 }
 body.dark .content-article section {
-    border-color: #555;
+    box-shadow: 0 0 0.3rem #999;
 }
 body.dark .content-article section h3 {
+    color: #DDD;
+    border-color: #666;
+}
+
+body.dark h4 {
     color: #FFF;
 }
 
@@ -546,6 +586,13 @@ body.dark .radio-check-wrap input[type="radio"]:first-child + label .slider {
     background: #D4EAD0;
 }
 /** forms fim **/
+
+pre,
+.pre {
+    background: #333;
+    color: #FFF;
+    border: 1px solid #AAA;
+}
 
 /**** TEMA DARK FIM ****/
 

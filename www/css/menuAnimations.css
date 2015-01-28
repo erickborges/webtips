@@ -21,7 +21,7 @@ body.run-home-animation #tituloHome {
     color: #FFF;
 }
 body.run-home-animation #home + footer {
-    bottom: -7rem;
+    bottom: -9rem;
 }
 
 body.run-home-animation #fake-nav .fake-nav-change {

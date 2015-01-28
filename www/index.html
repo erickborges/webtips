@@ -60,8 +60,8 @@
                 <input type="radio" id="selectMenuCss" class="input-hide" name="selectMenu" />
                 <label id="forSelectMenuCss" ng-class="getClass('/css')"  ng-click="go('/css', 'slideDown');"><i class="destaque-menu accelerated"></i>CSS</label>
                 
-                <input type="radio" id="selectMenuSvg" class="input-hide" name="selectMenu" />
-                <label id="forSelectMenuSvg" ng-class="getClass('/svg')"  ng-click="go('/svg', 'slideLeft');"><i class="destaque-menu accelerated"></i>SVG</label>
+                <input type="radio" id="selectMenuApp" class="input-hide" name="selectMenu" />
+                <label id="forSelectMenuApp" ng-class="getClass('/app')"  ng-click="go('/app', 'slideLeft');"><i class="destaque-menu accelerated"></i>APP's</label>
             </nav>
         
             <!-- App Content Container -->
@@ -83,19 +83,19 @@
             </script>
         
             <script type="text/ng-template" id="css.html">
-                <div id="css" class="pages inner-page" ng-swipe-right="go('/html', 'slideRight');" ng-swipe-left="go('/svg', 'slideLeft');">
+                <div id="css" class="pages inner-page" ng-swipe-right="go('/html', 'slideRight');" ng-swipe-left="go('/app', 'slideLeft');">
                     <css-file></css-file>
                 </div>
             </script>
             
-            <script type="text/ng-template" id="svg.html">
-                <div id="svg" class="pages inner-page" ng-swipe-right="go('/css', 'slideRight');" ng-swipe-left="go('/config', 'slideLeft');">
-                    <svg-file></svg-file>
+            <script type="text/ng-template" id="app.html">
+                <div id="app" class="pages inner-page" ng-swipe-right="go('/css', 'slideRight');" ng-swipe-left="go('/config', 'slideLeft');">
+                    <app-file></app-file>
                 </div>
             </script>
             
             <script type="text/ng-template" id="config.html">
-                <div id="config" class="pages inner-page" ng-swipe-right="go('/svg', 'slideRight');" >
+                <div id="config" class="pages inner-page" ng-swipe-right="go('/app', 'slideRight');" >
                     <config-file></config-file>
                 </div>
             </script>

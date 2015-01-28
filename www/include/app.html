@@ -1,0 +1,53 @@
+<article id="svg" class="content-article">
+    <h2>APP's</h2>
+    <section>
+        <h3>Use REM</h3>
+        <h4>Motivos para o uso da unidade "rem" do CSS para Web App's</h4>
+        <p>Você, provavelmente, deve conhecer e usar a unidade do CSS <strong>EM</strong> em seus projetos.</p>
+        <p>Ela é uma unidade muito útil para alterar dimensões da interface de um projeto - quando é bem estruturado - alterando-se a unidade em <strong>pixels</strong> em apenas alguns locais.</p>
+        <p>Porém, usar <strong>em</strong> tem suas complicações. Observe a estrutura e estilos abaixo:</p>
+        <div class="pre">
+&lt;body&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&gt;&lt;/a&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;<br />
+&lt;/body&gt;<br /><br />
+body {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;font-size: 10px;<br />
+}<br />
+p {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;font-size: 2em;<br />
+}<br />
+a {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;font-size: 4em;<br />
+}<br />
+        </div>
+        <p>O resultado disso sera que <strong>p</strong> terá <strong>font-size = 20px</strong> e <strong>a</strong> terá <strong>font-size = 80px</strong>. Isto ocorre porquê a referência da unidade <strong>em</strong> é o elemento html pai.</p>
+        <hr />
+        <p>A unidade <strong>REM</strong>, sendo que o <strong>R</strong> significa <strong>root</strong>, se referencia a tag raiz <strong>&lt;html&gt;</strong>.</p>
+        <p>Desta forma, todos os elementos que são definidos com <strong>rem</strong> serão alterados quando a unidade em <strong>px</strong> da tag <strong>html</strong> for alterada. Observe abaixo:</p>
+        <div class="pre">
+&lt;html&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&gt;&lt;/a&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;html&gt;<br />
+&lt;/body&gt;<br /><br />
+html {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;font-size: 10px;<br />
+}<br />
+p {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;font-size: 2rem;<br />
+}<br />
+a {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;font-size: 4rem;<br />
+}<br />
+        </div>
+        <p>Como resultado, <strong>p</strong> terá <strong>font-size = 20px</strong> e <strong>a</strong> terá <strong>font-size = 40px</strong>, pois a referência agora é a tag <strong>html</strong>.</p>
+        <p>Estes tipos de unidade não são utilizadas apenas para alterar tamanhos de fonte. Pode ser usada para definir larguras, margens, padding, etc. Pois, tanto <strong>em</strong> quando <strong>rem</strong> são medidas percentuais.</p>
+        <hr />
+        <p>A grande vantagem de construir um <strong>Web App</strong> usando todas as medidas em <strong>rem</strong> é que você terá muito menos trabalho para redefinir estas medidas para os vários tamanhos de telas e as variações de sistemas operacionais para os quais seu aplicativo será distribuído.</p>
+        <p>Basta alterar o font-size da tag <strong>html</strong>.</p>
+    </section>
+</article> 
